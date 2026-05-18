@@ -1,0 +1,50 @@
+
+# Docker Compose for local demo: MySQL + API
+# Usage: docker compose up --build
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: ums-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: user_management_db
+    # No host port — API connects via Docker network (mysql:3306). Avoids 3306/3307 conflicts with local MySQL/XAMPP.
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build: .
+    container_name: ums-api
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/user_management_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+  # Web UI for Docker MySQL (no host 3306 needed)
+  adminer:
+    image: adminer:latest
+    container_name: ums-adminer
+    restart: unless-stopped
+    ports:
+      - "8081:8080"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      ADMINER_DEFAULT_SERVER: mysql
+
+volumes:
+  mysql_data:
