@@ -240,16 +240,14 @@ Ten users are inserted on startup via `data.sql` (idempotent).
 
 ## Screenshots
 
-> Add screenshots here for your portfolio (Postman, API responses, database).
+Portfolio captures (files live in `docs/screenshots/`).
 
-| Description | Placeholder |
-|-------------|-------------|
-| Postman — Create User | `![Create User](docs/screenshots/create-user.png)` |
-| Postman — Paginated List | `![Get All Users](docs/screenshots/get-all-users.png)` |
-| MySQL — users table | `![Database](docs/screenshots/mysql-users.png)` |
-| Validation error 400 | `![Validation](docs/screenshots/validation-error.png)` |
-
-Create a `docs/screenshots/` folder and replace paths after capturing images.
+| Description | Preview |
+|-------------|---------|
+| Postman — Create User | ![Create User](docs/screenshots/create-user.png) |
+| Postman — Paginated List | ![Get All Users](docs/screenshots/get-all-users.png) |
+| MySQL — users table | ![Database](docs/screenshots/mysql-users.png) |
+| Validation error 400 | ![Validation](docs/screenshots/validation-error.png) |
 
 ---
 
