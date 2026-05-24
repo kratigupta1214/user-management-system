@@ -7,6 +7,7 @@ A **production-style Spring Boot REST API** for managing users with full CRUD, p
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-blue)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
+
 ---
 
 ## Project Overview

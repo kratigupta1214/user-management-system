@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 /**
- * Entry point for the User Management System REST API.
+ * Entry point for the Spring Boot User Management API.
  * Enables JPA auditing for automatic createdAt/updatedAt timestamps.
  */
 @SpringBootApplication

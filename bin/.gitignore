@@ -1,0 +1,75 @@
+# Compiled / build
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# IDE
+.idea/
+*.iws
+*.iml
+*.ipr
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+.factorypath
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Environment & secrets
+.env
+.env.local
+*.env
+application-local.properties
+application-secret.properties
+
+# Maven
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Spring Boot
+spring-boot-*.log
+
+# Package files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Test output
+/test-output/
+surefire-reports/
+failsafe-reports/
+
+# H2 / local DB (if used for dev)
+*.db
+*.trace.db
+
+# Docker
+.docker/
+
+# Misc
+*.class
+*.ctxt
+.mtj.tmp/
+hs_err_pid*
+replay_pid*
